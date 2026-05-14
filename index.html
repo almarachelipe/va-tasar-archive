@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V&A Wild Silk Holdings — Sorted Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <h1>V&amp;A Wild Silk Holdings</h1>
+    <p class="subtitle">A sorted archive of <strong id="total-count">41</strong> objects · Tasar, Eri &amp; Muga · 17th century → 2019 · India + Britain</p>
+    <p class="source">Source: Victoria &amp; Albert Museum, London. <a href="https://collections.vam.ac.uk/" target="_blank" rel="noopener">collections.vam.ac.uk</a></p>
+  </div>
+</header>
+
+<section class="archive-section">
+  <div class="archive-inner">
+
+    <aside class="filter-sidebar">
+      <div class="filter-header">
+        <h3>Filter</h3>
+        <button id="clear-filters" class="clear-btn">Clear all</button>
+      </div>
+
+      <div class="search-wrap">
+        <input type="search" id="search-input" placeholder="Search title, place, accession…">
+      </div>
+
+      <div class="filter-group" data-filter="region">
+        <h4>By Geography</h4>
+        <ul class="filter-list"></ul>
+      </div>
+
+      <div class="filter-group" data-filter="yearBucket">
+        <h4>By Year</h4>
+        <ul class="filter-list"></ul>
+      </div>
+
+      <div class="filter-group" data-filter="fibre">
+        <h4>By Fibre</h4>
+        <ul class="filter-list"></ul>
+      </div>
+
+      <div class="filter-group" data-filter="sampleType">
+        <h4>By Sample Type</h4>
+        <ul class="filter-list"></ul>
+      </div>
+
+      <div class="filter-group" data-filter="technique">
+        <h4>By Technique</h4>
+        <ul class="filter-list"></ul>
+      </div>
+
+      <div class="filter-group" data-filter="dyeBinary">
+        <h4>By Dye</h4>
+        <ul class="filter-list"></ul>
+      </div>
+
+      <div class="filter-group" data-filter="dyeStatus">
+        <h4>By Dye Status (detail)</h4>
+        <ul class="filter-list"></ul>
+      </div>
+
+      <div class="filter-group" data-filter="objectType">
+        <h4>By Object Type</h4>
+        <ul class="filter-list"></ul>
+      </div>
+    </aside>
+
+    <main class="results-main">
+      <div class="results-bar">
+        <span id="result-count">Showing all 42 objects</span>
+        <div class="sort-wrap">
+          <label for="sort-select">Sort:</label>
+          <select id="sort-select">
+            <option value="year-asc">Year (oldest first)</option>
+            <option value="year-desc">Year (newest first)</option>
+            <option value="title">Title (A → Z)</option>
+            <option value="region">Region</option>
+          </select>
+        </div>
+      </div>
+      <div id="grid" class="grid"></div>
+    </main>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>Obeetee Craft Studio</p>
+  <p class="footer-note">Click any object card to see full details and the V&amp;A page link. To extend this archive (e.g. with Forbes Watson 1866 swatches), simply add new entries to <code>data.js</code>.</p>
+</footer>
+
+<!-- Modal -->
+<div id="modal" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" aria-label="Close">×</button>
+    <div class="modal-content"></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
